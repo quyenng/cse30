@@ -73,10 +73,12 @@ rev_word_print(char *line_ptr, int cnt)
 		}
 		//if it is space
 		else {
+
 			// if previous char was also space, move to the next char
 			if(isspace(*(current -1) != 0)) {
 				printf("%c", space);
 			}
+
 			// if previous char was not space, print the reversed word
 			else {
 				printing = current - 1;
@@ -93,9 +95,17 @@ rev_word_print(char *line_ptr, int cnt)
 		current++;
 	
 	}
-	if (*current == '\n') {
-		printf("%c", *current);
+	
+	// handles last word if there is no trailing '\n'
+	if (wordLength != 0) {
+		printing = current - 1;
+		while(printing != (current - wordLength - 1)) {
+			printf("%c", *printing);
+			printing--;
+		}
 	}
+
+	printf("\n");
 	
       	return(0);
 }
