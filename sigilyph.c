@@ -69,7 +69,7 @@ rev_word_print(char *line_ptr, int cnt)
 		else {
 			// if previous spot was also space, ignore
 			if(isspace(*(current -1) != 0)) {
-				continue;
+				printf("%c", space);
 			}
 			// if previous spot was not space, reverse the word
 			else {
