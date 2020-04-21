@@ -74,7 +74,7 @@ rev_word_print(char *line_ptr, int cnt)
 		//if it is space
 		else {
 			// adds newline if char was a newline
-			if (current == '\n') {
+			if (*current == '\n') {
 				printf("%c", *current);
 			}
 			
@@ -110,7 +110,7 @@ rev_word_print(char *line_ptr, int cnt)
 	}
 	
 	// adds newline if there was a newline
-	if (current == '\n') {
+	if (*current == '\n') {
 		printf("%c", *current);
 	}
 	
