@@ -104,8 +104,11 @@ rev_word_print(char *line_ptr, int cnt)
 			printing--;
 		}
 	}
-
-	printf("\n");
+	
+	// adds newline if there was a newline
+	if (current == '\n') {
+		printf("%c", *current);
+	}
 	
       	return(0);
 }
