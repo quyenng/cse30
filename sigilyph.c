@@ -55,6 +55,7 @@ rev_word_print(char *line_ptr, int cnt)
 	char * current = line_ptr;
 	char * printing = line_ptr;
 	int wordLength = 0;
+	int space = ' ';
 
 	
 	// run for durration of line input
@@ -78,7 +79,7 @@ rev_word_print(char *line_ptr, int cnt)
 					printing--;
 				}
 				wordLength = 0;
-				printf("%c", " ");
+				printf("%c", space);
 			}
 		}
 		// move onto the next word
