@@ -1,8 +1,8 @@
 /*
  * Homework #2
- * Date:    TODO
- * Author:  TODO
- * PID:     TODO
+ * Date:    4/21/20
+ * Author:  Quyen Nguyen
+ * PID:     A15927330
  * 
  * Program: Sigilyph Reverse Word (Mirror)
  *
@@ -73,9 +73,13 @@ rev_word_print(char *line_ptr, int cnt)
 		}
 		//if it is space
 		else {
-
+			// adds newline if char was a newline
+			if (current == '\n') {
+				printf("%c", *current);
+			}
+			
 			// if previous char was also space, move to the next char
-			if(isspace(*(current -1) != 0)) {
+			else if(isspace(*(current -1) != 0)) {
 				printf("%c", space);
 			}
 
