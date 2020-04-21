@@ -51,40 +51,51 @@ main(void)
 int
 rev_word_print(char *line_ptr, int cnt)
 {
-
+	// holds char to be checked
 	char * current = line_ptr;
-	char * printing = line_ptr;
+
+	// holds char to be printed
+	char * printing;
+
+	// length of word to be printed
 	int wordLength = 0;
+
 	int space = ' ';
 
 	
-	// run for durration of line input
+	// cycles through each char of the input
 	while (current != (line_ptr + cnt)) {
+
 	
-		// if not space, increase length of word
+		// checks if char is space, if not - increments wordlength
 		if (isspace(*current) == 0) {
-			wordLength++;
+			wordLength++;		
 		}
 		//if it is space
 		else {
-			// if previous spot was also space, ignore
+			// if previous char was also space, move to the next char
 			if(isspace(*(current -1) != 0)) {
 				printf("%c", space);
 			}
-			// if previous spot was not space, reverse the word
+			// if previous char was not space, print the reversed word
 			else {
 				printing = current - 1;
 				while(printing != (current - wordLength - 1)) {
 					printf("%c", *printing);
 					printing--;
 				}
+
 				wordLength = 0;
 				printf("%c", space);
 			}
 		}
 		// move onto the next word
-		current++;	
+		current++;
+	
 	}
-	printf("\n");	
+	if (*current == '\n') {
+		printf("%c", *current);
+	}
+	
       	return(0);
 }
