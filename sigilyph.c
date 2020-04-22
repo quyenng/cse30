@@ -88,7 +88,7 @@ rev_word_print(char *line_ptr, int cnt)
 				}
 
 				wordLength = 0;
-				printf("%c", current);
+				printf("%c", *current);
 			}
 			
 			// adds newline if char was a newline
