@@ -86,15 +86,11 @@ rev_word_print(char *line_ptr, int cnt)
 					printf("%c", *printing);
 					printing--;
 				}
-
 				wordLength = 0;
-				// adds newline if char was a newline
-				if (*current == '\n') {
-					printf("%c", *current);
-				}
-				else {
-					printf("%c", space);
-				}
+				printf("%c", space);
+			}
+			if (*current == '\n') {
+				printf("%c", *current);
 			}
 			
 		}
