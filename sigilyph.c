@@ -88,14 +88,15 @@ rev_word_print(char *line_ptr, int cnt)
 				}
 
 				wordLength = 0;
-				printf("%c", *current);
+				// adds newline if char was a newline
+				if (*current == '\n') {
+					printf("%c", *current);
+				}
+				else {
+					printf("%c", space);
+				}
 			}
 			
-			// adds newline if char was a newline
-			/*if (*current == '\n') {
-				printf("%c", *current);
-			}
-			*/
 		}
 		// move onto the next word
 		current++;
