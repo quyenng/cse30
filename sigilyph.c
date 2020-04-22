@@ -60,8 +60,6 @@ rev_word_print(char *line_ptr, int cnt)
 	// length of word to be printed
 	int wordLength = 0;
 
-	int space = ' ';
-
 	
 	// cycles through each char of the input
 	while (current != (line_ptr + cnt)) {
@@ -76,7 +74,7 @@ rev_word_print(char *line_ptr, int cnt)
 			
 			// if previous char was also space, move to the next char
 			if(isspace(*(current -1) != 0)) {
-				printf("%c", space);
+				printf("%c", *current);
 			}
 
 			// if previous char was not space, print the reversed word
@@ -87,11 +85,9 @@ rev_word_print(char *line_ptr, int cnt)
 					printing--;
 				}
 				wordLength = 0;
-				printf("%c", space);
-			}
-			if (*current == '\n') {
 				printf("%c", *current);
 			}
+
 			
 		}
 		// move onto the next word
