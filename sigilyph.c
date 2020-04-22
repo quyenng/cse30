@@ -73,13 +73,9 @@ rev_word_print(char *line_ptr, int cnt)
 		}
 		//if it is space
 		else {
-			// adds newline if char was a newline
-			if (*current == '\n') {
-				printf("%c", *current);
-			}
 			
 			// if previous char was also space, move to the next char
-			else if(isspace(*(current -1) != 0)) {
+			if(isspace(*(current -1) != 0)) {
 				printf("%c", space);
 			}
 
@@ -93,6 +89,11 @@ rev_word_print(char *line_ptr, int cnt)
 
 				wordLength = 0;
 				printf("%c", space);
+			}
+			
+			// adds newline if char was a newline
+			if (*current == '\n') {
+				printf("%c", *current);
 			}
 		}
 		// move onto the next word
